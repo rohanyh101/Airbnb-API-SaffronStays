@@ -17,6 +17,10 @@ The application has been deployed and is available for use at:
 
 - **Deployed Application**: [https://airbnb-api-saffronstays.onrender.com](https://airbnb-api-saffronstays.onrender.com)
 
+- **Deployed Application Health Check Endpint**: [https://airbnb-api-saffronstays.onrender.com/api/v1/health](https://airbnb-api-saffronstays.onrender.com/api/v1/health)
+
+- **Deployed Application Swagger Docs**: [https://airbnb-api-saffronstays.onrender.com/swagger/index.html](https://airbnb-api-saffronstays.onrender.com/swagger/index.html)
+
 **Note**: Response times may take longer than usual because the servers of the platform "Render" are located in Singapore.
 
 ## Setup and Installation
@@ -102,12 +106,12 @@ Path Parameter:
 - `room_id` (string): The unique identifier of the Airbnb room.
 
 ```bash
-> curl --location --request GET 'localhost:8080/api/v1/getMetrics/619966061834034729' --header 'Content-Type: application/json' | jq
+> > curl --location --request GET 'localhost:8080/api/v1/getMetrics/619966061834034729' --header 'Content-Type: application/json'
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100   243  100   243    0     0     73      0  0:00:03  0:00:03 --:--:--    73
+100   301  100   301    0     0     90      0  0:00:03  0:00:03 --:--:--    90
 {
-  "request_id": "619966061834034729",
+  "requested_room_id": "619966061834034729",
   "occupancy_percentage": {
     "2024-12": 61.111111111111114,
     "2025-01": 32.25806451612903,
@@ -116,9 +120,9 @@ Path Parameter:
     "2025-04": 100,
     "2025-05": 100
   },
-  "average_rate": 137.06666666666666,
-  "highest_rate": 150,
-  "lowest_rate": 123
+  "average_rate_for_next_30_days": 134.06666666666666,
+  "highest_rate_for_next_30_days": 150,
+  "lowest_rate_for_next_30_days": 120
 }
 ```
 
