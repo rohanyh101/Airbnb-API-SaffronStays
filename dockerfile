@@ -8,7 +8,7 @@ RUN go mod download
 
 COPY . .
 
-WORKDIR /app/cmd
+WORKDIR /app
 
 RUN go build -o /app/airbnb
 

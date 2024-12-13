@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	docs "github.com/roh4nyh/airbnb-api/docs"
 	swaggerfiles "github.com/swaggo/files"
@@ -18,18 +19,26 @@ import (
 // @host localhost:8080
 // @BasePath /api/v1
 func main() {
-	r := gin.Default()
+	app := gin.Default()
 	PORT := "8080"
+	app.Use(gin.Logger())
 	docs.SwaggerInfo.BasePath = "/api/v1"
 
-	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
+	config := cors.DefaultConfig()
+	config.AllowOrigins = []string{"*"}
+	config.AllowCredentials = true
+	config.AllowHeaders = []string{"Authorization", "Content-Type"}
+	config.AllowMethods = []string{"GET", "POST", "PUT", "DELETE"}
+	app.Use(cors.New(config))
 
-	apiV1 := r.Group("/api/v1")
+	app.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
+
+	apiV1 := app.Group("/api/v1")
 	apiV1.GET("/health", HealthCheckHandler)
 	apiV1.GET("/getMetrics/:room_id", GetMetricsHandler)
 
 	log.Printf("server running on port %s", PORT)
-	r.Run(fmt.Sprintf(":%s", PORT))
+	app.Run(fmt.Sprintf(":%s", PORT))
 }
 
 // Health check route
