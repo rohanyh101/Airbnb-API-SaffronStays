@@ -2,20 +2,20 @@ basePath: /api/v1
 definitions:
   main.APIResponse:
     properties:
-      average_rate:
+      average_rate_for_next_30_days:
         type: number
-      highest_rate:
+      highest_rate_for_next_30_days:
         type: number
-      lowest_rate:
+      lowest_rate_for_next_30_days:
         type: number
       occupancy_percentage:
         additionalProperties:
           type: number
         type: object
-      request_id:
+      requested_room_id:
         type: string
     type: object
-host: localhost:8080
+host: airbnb-api-saffronstays.onrender.com
 info:
   contact: {}
   description: This is a Assignment server Airbnb API (SaffronStays).

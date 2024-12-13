@@ -79,13 +79,13 @@ const docTemplate = `{
         "main.APIResponse": {
             "type": "object",
             "properties": {
-                "average_rate": {
+                "average_rate_for_next_30_days": {
                     "type": "number"
                 },
-                "highest_rate": {
+                "highest_rate_for_next_30_days": {
                     "type": "number"
                 },
-                "lowest_rate": {
+                "lowest_rate_for_next_30_days": {
                     "type": "number"
                 },
                 "occupancy_percentage": {
@@ -94,7 +94,7 @@ const docTemplate = `{
                         "type": "number"
                     }
                 },
-                "request_id": {
+                "requested_room_id": {
                     "type": "string"
                 }
             }
@@ -105,7 +105,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "localhost:8080",
+	Host:             "airbnb-api-saffronstays.onrender.com",
 	BasePath:         "/api/v1",
 	Schemes:          []string{},
 	Title:            "Airbnb API (SaffronStays)",

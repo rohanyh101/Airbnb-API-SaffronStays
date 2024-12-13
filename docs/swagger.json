@@ -7,7 +7,7 @@
         "contact": {},
         "version": "1.0"
     },
-    "host": "localhost:8080",
+    "host": "airbnb-api-saffronstays.onrender.com",
     "basePath": "/api/v1",
     "paths": {
         "/getMetrics/{room_id}": {
@@ -73,13 +73,13 @@
         "main.APIResponse": {
             "type": "object",
             "properties": {
-                "average_rate": {
+                "average_rate_for_next_30_days": {
                     "type": "number"
                 },
-                "highest_rate": {
+                "highest_rate_for_next_30_days": {
                     "type": "number"
                 },
-                "lowest_rate": {
+                "lowest_rate_for_next_30_days": {
                     "type": "number"
                 },
                 "occupancy_percentage": {
@@ -88,7 +88,7 @@
                         "type": "number"
                     }
                 },
-                "request_id": {
+                "requested_room_id": {
                     "type": "string"
                 }
             }

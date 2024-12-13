@@ -110,10 +110,10 @@ func CalculateMetrics(roomId string, availability []AvailabilityData, prices []P
 	averageRate := totalRate / float64(count)
 
 	return APIResponse{
-		RequestID:           roomId,
-		OccupancyPercentage: occupancy,
-		AverageRate:         averageRate,
-		HighestRate:         highestRate,
-		LowestRate:          lowestRate,
+		RequestedRoomID:          roomId,
+		OccupancyPercentage:      occupancy,
+		AverageRateForNext30days: averageRate,
+		HighestRateForNext30days: highestRate,
+		LowestRateForNext30days:  lowestRate,
 	}
 }

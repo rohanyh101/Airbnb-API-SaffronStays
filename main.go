@@ -16,19 +16,20 @@ import (
 // @version 1.0
 // @description This is a Assignment server Airbnb API (SaffronStays).
 // @termsOfService http://swagger.io/terms/
-// @host localhost:8080
+// @host airbnb-api-saffronstays.onrender.com
 // @BasePath /api/v1
 func main() {
 	app := gin.Default()
 	PORT := "8080"
 	app.Use(gin.Logger())
 	docs.SwaggerInfo.BasePath = "/api/v1"
+	docs.SwaggerInfo.Schemes = []string{"https"}
 
 	config := cors.DefaultConfig()
 	config.AllowOrigins = []string{"*"}
 	config.AllowCredentials = true
 	config.AllowHeaders = []string{"Authorization", "Content-Type"}
-	config.AllowMethods = []string{"GET", "POST", "PUT", "DELETE"}
+	config.AllowMethods = []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"}
 	app.Use(cors.New(config))
 
 	app.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))

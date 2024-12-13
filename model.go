@@ -28,9 +28,9 @@ type PriceData struct {
 }
 
 type APIResponse struct {
-	RequestID           string             `json:"request_id"`
-	OccupancyPercentage map[string]float64 `json:"occupancy_percentage"`
-	AverageRate         float64            `json:"average_rate"`
-	HighestRate         float64            `json:"highest_rate"`
-	LowestRate          float64            `json:"lowest_rate"`
+	RequestedRoomID          string             `json:"requested_room_id"`
+	OccupancyPercentage      map[string]float64 `json:"occupancy_percentage"`
+	AverageRateForNext30days float64            `json:"average_rate_for_next_30_days"`
+	HighestRateForNext30days float64            `json:"highest_rate_for_next_30_days"`
+	LowestRateForNext30days  float64            `json:"lowest_rate_for_next_30_days"`
 }
