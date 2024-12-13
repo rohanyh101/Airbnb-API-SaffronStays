@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  go_app:
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    environment:
+      - PORT=8080

@@ -1,0 +1,64 @@
+basePath: /api/v1
+definitions:
+  main.APIResponse:
+    properties:
+      average_rate:
+        type: number
+      highest_rate:
+        type: number
+      lowest_rate:
+        type: number
+      occupancy_percentage:
+        additionalProperties:
+          type: number
+        type: object
+      request_id:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a Assignment server Airbnb API (SaffronStays).
+  termsOfService: http://swagger.io/terms/
+  title: Airbnb API (SaffronStays)
+  version: "1.0"
+paths:
+  /getMetrics/{room_id}:
+    get:
+      consumes:
+      - application/json
+      description: Fetches availability and price data and calculates metrics
+      parameters:
+      - description: Room ID
+        in: path
+        name: room_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.APIResponse'
+      summary: Get metrics
+      tags:
+      - Metrics
+  /health:
+    get:
+      consumes:
+      - application/json
+      description: Health check endpoint to see if the server is running
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Health check
+      tags:
+      - Health
+swagger: "2.0"
