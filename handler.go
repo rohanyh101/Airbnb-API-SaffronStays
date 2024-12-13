@@ -15,7 +15,7 @@ func FetchAvailability(roomID string) ([]AvailabilityData, error) {
 		return nil, fmt.Errorf("error creating request: %v", err)
 	}
 
-	req.Header.Add("x-rapidapi-key", "68eb13b675mshbd2dbb356fb7333p19f0d1jsn8761d2fa41cc")
+	req.Header.Add("x-rapidapi-key", "f9df31e10dmshd92a56e4655fbaap18456bjsnb782c8e06c84")
 	req.Header.Add("x-rapidapi-host", "airbnb-listings.p.rapidapi.com")
 
 	resp, err := http.DefaultClient.Do(req)
@@ -40,7 +40,7 @@ func FetchPrice(roomID string) ([]PriceData, error) {
 		return nil, err
 	}
 
-	req.Header.Add("x-rapidapi-key", "68eb13b675mshbd2dbb356fb7333p19f0d1jsn8761d2fa41cc")
+	req.Header.Add("x-rapidapi-key", "f9df31e10dmshd92a56e4655fbaap18456bjsnb782c8e06c84")
 	req.Header.Add("x-rapidapi-host", "airbnb-listings.p.rapidapi.com")
 
 	resp, err := http.DefaultClient.Do(req)
