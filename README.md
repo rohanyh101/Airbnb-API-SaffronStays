@@ -7,7 +7,7 @@ This is a Go-based API that provides two main features for Airbnb room managemen
 
 ## Requirements
 
-- Go 1.18 or higher
+- Go 1.23 or higher
 - Docker (optional, for containerization)
 - Swagger for API documentation
 
@@ -134,7 +134,7 @@ You can use the Swagger UI to explore and test all the available API endpoints.
 ## Challenges
 During the development of this API, some of the challenges I faced included:
 
-1. Handling Multiple API Calls: Data Structure Parsing: Parsing the data correctly from the external APIs and ensuring that it was structured appropriately for processing was one of the challenges. There were multiple fields and types to manage, and making sure that each piece of data was handled correctly required careful attention to detail.
+1. Data Structure Parsing: Parsing the data correctly from the external APIs and ensuring that it was structured appropriately for processing was one of the challenges. There were multiple fields and types to manage, and making sure that each piece of data was handled correctly required careful attention to detail.
 2. Date Operations: A significant challenge was performing operations involving dates, such as calculating occupancy percentages for each month over the next 5 months, and determining average rates, highest, and lowest rates for the next 30 days. Ensuring the correct handling of dates across different formats, considering edge cases like leap years or time zones, and accurately performing calculations was complex.
 
 ## Contributions
